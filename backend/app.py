@@ -9,7 +9,7 @@ from mysql.connector import pooling, Error as MySQLError
 app = Flask(__name__, static_folder="static", static_url_path="")
 
 # Environment variables and defaults
-DBHOST = os.environ.get("DBHOST", "db-3tierapp.cn6g4q48gxlk.ap-south-1.rds.amazonaws.com")
+DBHOST = os.environ.get("DBHOST", "db-3tierapp.cn6g4q48glk.ap-south-1.rds.amazonaws.com")
 DBUSER = os.environ.get("DBUSER", "admin")
 DBPASS = os.environ.get("DBPASS", "SuperSecret123!")
 DBNAME = os.environ.get("DBNAME", "elegancechocolat")
