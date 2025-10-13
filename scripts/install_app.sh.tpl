@@ -21,11 +21,16 @@ cd app
 echo "Cloning repository..."
 git clone https://github.com/muthuraj-rajarathinam/demorepo.git
 cd demorepo
+chown -R ec2-user:ec2-user .
+
+export DB_HOST=${db_endpoint}
+export DB_USER=${db_user}
+export DB_PASS=${db_pass}
 
 cat > .env <<EOF
-DB_HOST=
-DB_USER=admin
-DB_PASS=SuperSecret123
+DB_HOST=${db_endpoint}
+DB_USER=${db_user}
+DB_PASS=${db_pass}
 EOF
 
 echo "Deployment complete at $(date)" > /home/ec2-user/deploy.log
