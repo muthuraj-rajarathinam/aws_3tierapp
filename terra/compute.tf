@@ -82,7 +82,7 @@ resource "null_resource" "update_frontend_index" {
  triggers = {
   alb_dns = aws_lb.app_alb.dns_name
   }
-  provisioner "remote-exec" {
-   inline  = ["sed -i 's|__BACKEND_ALB_URL__|http://${aws_lb.app_alb.dns_name}|g' ../frontend/index.html"]
+  provisioner "local-exec" {
+    command = "echo Instance created:"
   }
 }
