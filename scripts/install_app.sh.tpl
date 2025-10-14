@@ -1,3 +1,4 @@
+
 #!/bin/bash
 sudo yum update -y
 
@@ -33,5 +34,7 @@ DB_HOST=${db_endpoint}
 DB_USER=${db_user}
 DB_PASS=${db_pass}
 EOF
+
+docker compose up -d --build 
 
 echo "Deployment complete at $(date)" > /home/ec2-user/deploy.log
