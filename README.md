@@ -78,8 +78,9 @@ This showcases **end-to-end automation** — from infrastructure to application 
    * Backend Flask API → port `8080`
    * Frontend static app → port `80`
 4. **Load Balancer** routes traffic to the frontend.
-5. **Flask app** interacts securely with RDS MySQL in a private subnet.
-6. **CodePipeline + CodeBuild** automate future updates:
+5. **Auto Scaling Group** Makes Instance Balance during traffic hike.
+6. **Flask app** interacts securely with RDS MySQL in a private subnet.
+7. **CodePipeline + CodeBuild** automate future updates:
 
    * Any code change in GitHub triggers new build + deployment automatically.
 
@@ -197,6 +198,4 @@ DevOps Engineer | AWS | Terraform | Docker | CI/CD | Cloud Architecture
 
 > “This project represents my ability to build, automate, and deploy production-grade systems on AWS — bridging the gap between development and cloud operations with real-world DevOps skills.”
 
----
 
-Would you like me to generate a **professional architecture diagram** (for the README header image) showing your 3-tier AWS + CodePipeline setup visually? It’ll make your README stand out and immediately impress HRs.
