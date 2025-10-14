@@ -7,7 +7,7 @@ variable "aws_profile" {
 }
 
 variable "project_name" {
-  default = "3tierapp"
+  default = "aws_3tierapp"
 }
 
 variable "vpc_cidr" {
