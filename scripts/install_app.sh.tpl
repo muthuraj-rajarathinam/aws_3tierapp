@@ -20,7 +20,7 @@ cd app
 
 
 echo "Cloning repository..."
-git clone https://github.com/muthuraj-rajarathinam/demorepo.git
+git clone https://github.com/muthuraj-rajarathinam/aws_3tierapp.git
 cd demorepo
 chown -R ec2-user:ec2-user .
 
