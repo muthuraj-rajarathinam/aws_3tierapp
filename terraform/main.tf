@@ -58,16 +58,19 @@ resource "aws_route_table_association" "public_assoc" {
   route_table_id = aws_route_table.public.id
 }
 
-# NAT Gateway
+
 resource "aws_eip" "nat" {
+  count = length(var.public_subnets) # Creates 2 EIPs
   domain = "vpc"
 }
 
+
 resource "aws_nat_gateway" "nat" {
-  allocation_id = aws_eip.nat.id
-  subnet_id     = aws_subnet.public[0].id
+  count         = length(var.public_subnets) 
+  allocation_id = aws_eip.nat[count.index].id
+  subnet_id     = aws_subnet.public[count.index].id 
   tags = {
-    Name = "${var.project_name}-nat"
+    Name = "${var.project_name}-nat-${count.index}"
   }
 }
 
